@@ -13,6 +13,8 @@ class PageResult(BaseModel, Generic[T]):
     total: int
     page: int = 1
     size: int = 20
+    # 模块自带的随明细重算的统计指标（如消防设施的待检查数）；其余模块不填
+    stats: dict[str, int] | None = None
 
 
 class ActionResult(BaseModel):
@@ -267,3 +269,22 @@ class QualitycheckEntry(BaseModel):
     field_5: str | None = None  # 整改要求
     field_6: str | None = None  # 整改期限
     field_7: str | None = None  # 监察状态
+
+
+class FirecontrolEntry(BaseModel):
+    """机坪消防设施（灭火器材）明细结构。"""
+
+    field_0: str | None = None  # 器材编号
+    field_1: str | None = None  # 器材类型
+    field_2: str | None = None  # 规格型号
+    field_3: str | None = None  # 归属区域
+    field_4: str | None = None  # 存放位置
+    field_5: str | None = None  # 检查批次
+    field_6: str | None = None  # 检查人
+    field_7: str | None = None  # 检查时间
+    field_8: str | None = None  # 检查结果
+    field_9: str | None = None  # 上次检查日
+    field_10: str | None = None  # 下次检查日
+    field_11: str | None = None  # 到期原因
+    field_12: str | None = None  # 更换人
+    field_13: str | None = None  # 更换时间

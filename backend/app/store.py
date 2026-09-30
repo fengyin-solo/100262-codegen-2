@@ -14,9 +14,15 @@ class Store:
         self._tables: dict[str, list[dict[str, Any]]] = {
             name: [dict(row) for row in rows] for name, rows in SEED_ROWS.items()
         }
+        # 内部表（如消防检查明细）只作为业务表的附属数据，不进总览页的模块列表。
+        # 在这里集中声明，避免依赖某个 service 是否被提前导入。
+        self._internal_tables: set[str] = {"firecontrol_records"}
+
+    def mark_internal(self, module: str) -> None:
+        self._internal_tables.add(module)
 
     def module_names(self) -> list[str]:
-        return sorted(self._tables)
+        return sorted(name for name in self._tables if name not in self._internal_tables)
 
     def rows(self, module: str) -> list[dict[str, Any]]:
         return self._tables.setdefault(module, [])
