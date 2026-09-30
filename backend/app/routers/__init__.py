@@ -25,6 +25,7 @@ from app.routers import vehicle as router_vehicle
 from app.routers import staffshift as router_staffshift
 from app.routers import runway as router_runway
 from app.routers import emergencyplan as router_emergencyplan
+from app.routers import firefacility as router_firefacility
 from app.routers import qualitycheck as router_qualitycheck
 
-ROUTERS = [router_flightstand, router_marshalling, router_bridge, router_baggage, router_catering, router_fueling, router_deicing, router_lavatory, router_pushback, router_gse, router_cargo, router_clearance, router_turnaround, router_ramp, router_weather2, router_vehicle, router_staffshift, router_runway, router_emergencyplan, router_qualitycheck]
+ROUTERS = [router_flightstand, router_marshalling, router_bridge, router_baggage, router_catering, router_fueling, router_deicing, router_lavatory, router_pushback, router_gse, router_cargo, router_clearance, router_turnaround, router_ramp, router_weather2, router_vehicle, router_staffshift, router_runway, router_emergencyplan, router_firefacility, router_qualitycheck]

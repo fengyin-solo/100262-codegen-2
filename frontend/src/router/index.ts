@@ -20,6 +20,7 @@ const Vehicle = () => import('@/views/vehicle/index.vue')
 const Staffshift = () => import('@/views/staffshift/index.vue')
 const Runway = () => import('@/views/runway/index.vue')
 const Emergencyplan = () => import('@/views/emergencyplan/index.vue')
+const Firefacility = () => import('@/views/firefacility/index.vue')
 const Qualitycheck = () => import('@/views/qualitycheck/index.vue')
 
 const router = createRouter({
@@ -45,6 +46,7 @@ const router = createRouter({
     { path: '/staffshift', name: 'staffshift', component: Staffshift },
     { path: '/runway', name: 'runway', component: Runway },
     { path: '/emergencyplan', name: 'emergencyplan', component: Emergencyplan },
+    { path: '/firefacility', name: 'firefacility', component: Firefacility },
     { path: '/qualitycheck', name: 'qualitycheck', component: Qualitycheck },
   ],
 })

@@ -256,6 +256,18 @@ class EmergencyplanEntry(BaseModel):
     field_6: str | None = None  # 演练日期
     field_7: str | None = None  # 预案状态
 
+class FirefacilityEntry(BaseModel):
+    """灭火器材明细结构。"""
+
+    field_0: str | None = None  # 器材编号
+    field_1: str | None = None  # 器材类型
+    field_2: str | None = None  # 归属区域
+    field_3: str | None = None  # 存放位置
+    field_4: str | None = None  # 检查人
+    field_5: str | None = None  # 检查时间
+    field_6: str | None = None  # 下次检查日期
+    field_7: str | None = None  # 器材状态
+
 class QualitycheckEntry(BaseModel):
     """监察记录明细结构。"""
 
